@@ -39,46 +39,38 @@ CupertinoSlider(
   @override
   Widget build(BuildContext context) {
     return PlaygroundDemo(
-      codePreview: codePreview,
-      previewWidget: _buildPreviewWidget(context),
-      configWidget: _buildConfigWidget(context),
-    );
-  }
-
-  Widget _buildConfigWidget(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        ColorPicker(
-          label: 'Active Color',
-          selectedValue: _activeColor,
-          colors: _colors,
-          onItemTapped: (Color color) {
+      previewWidget: Padding(
+        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+        child: CupertinoSlider(
+          value: _value,
+          activeColor: _activeColor,
+          min: 0.0,
+          max: 10.0,
+          divisions: 10,
+          onChanged: (double value) {
             setState(() {
-              _activeColor = color;
+              _value = value;
             });
           },
         ),
-      ],
-    );
-  }
-
-  Widget _buildPreviewWidget(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-      child: CupertinoSlider(
-        value: _value,
-        activeColor: _activeColor,
-        min: 0.0,
-        max: 10.0,
-        divisions: 10,
-        onChanged: (double value) {
-          setState(() {
-            _value = value;
-          });
-        },
       ),
+      configWidget: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          ColorPicker(
+            label: 'Active Color',
+            selectedValue: _activeColor,
+            colors: _colors,
+            onItemTapped: (Color color) {
+              setState(() {
+                _activeColor = color;
+              });
+            },
+          ),
+        ],
+      ),
+      codePreview: codePreview,
     );
   }
 }

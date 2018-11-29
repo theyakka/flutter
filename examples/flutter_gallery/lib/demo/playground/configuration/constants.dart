@@ -15,19 +15,18 @@ const double kPickerRowPadding = 10.0;
 const List<BorderChoice> kBorderChoices = <BorderChoice>[
   BorderChoice(type: 'square', code: '''
 RoundedRectangleBorder(
-  borderRadius: BorderRadius.zero
+  borderRadius: BorderRadius.zero,
 )'''),
   BorderChoice(type: 'rounded', code: '''
 RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(10.0)'
+  borderRadius: BorderRadius.circular(10.0),
 )'''),
   BorderChoice(type: 'beveled', code: '''
 BeveledRectangleBorder(
-  borderRadius: BorderRadius.circular(10.0)
+  borderRadius: BorderRadius.circular(10.0),
 )'''),
   BorderChoice(type: 'stadium', code: '''
-StadiumBorder()
-'''),
+StadiumBorder()'''),
 ];
 
 const List<ColorChoice> kColorChoices = <ColorChoice>[

@@ -18,8 +18,6 @@ class _RaisedButtonDemoState extends State<RaisedButtonDemo> {
   String _borderShape = 'rounded';
   Color _color = Colors.blue;
 
-  static String title = 'RaisedButton'.toUpperCase();
-
   String get codePreview => '''
 RaisedButton(
   color: ${codeSnippetForColor(_color)},
@@ -29,7 +27,7 @@ RaisedButton(
       fontSize: 16.0,
     ),
   ),
-  shape: ${codeSnippetForBorder(_borderShape)}
+  shape: ${codeSnippetForBorder(_borderShape)},
   elevation: $_elevation,
   onPressed: () {},
 )
